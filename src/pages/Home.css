@@ -1,0 +1,149 @@
+.hero-container {
+  position: relative;
+  background-image: url("https://www.nscag.org/news/images/281_220.jpg");
+  background-size: cover;
+  background-position: center center;
+  height: 740px;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* filter: brightness(0.7); 
+  z-index: -1;  */
+}
+
+
+.hero-container h3 {
+  font-size: 36px;
+  background-color: rgba(135, 135, 135, 0.7);
+  padding: 10px;
+  font-weight: bold;
+  color: black;
+}
+
+.sign-up{
+  margin-top: 30px;
+}
+
+/*-------------------------- Volunteer Speak -------------------*/
+
+.card__item {
+  display: flex;
+  flex-direction: row;
+}
+.volunteer_speek {
+  background-color: #40513b;
+}
+.voluntspeek__heading {
+  color: beige;
+}
+.main__heading {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 30px 0px;
+}
+.main__icon {
+  font-size: 1.5rem;
+  background-color: #609966;
+  padding: 0.7rem;
+  border-radius: 1rem;
+  color: #f9d923;
+}
+.container1 {
+  width: 90%;
+  max-width: 1920px;
+  margin-inline: auto;
+}
+.container5 {
+  background-color: #40513b;
+  padding-bottom: 60px;
+}
+@media screen and (max-width: 1024px) {
+  .card__item {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+/*-------------------------- IMPACT SECTION -------------------*/
+.impact__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.impact_section__content {
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width: 1024px) {
+  .impact_section__content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+/*---------------------------- FOOTER ------------------------------*/
+footer {
+  background: #609966;
+  margin-top: 7rem;
+  padding-top: 7rem;
+  font-size: 0.9rem;
+  color: beige;
+}
+.footer__container {
+  display: grid;
+  grid-template-columns: 26rem 1fr 1fr 1fr;
+  gap: 6rem;
+}
+.footer__container article {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.7rem;
+}
+.footer__container article p {
+  margin-top: 0.5rem;
+}
+.footer__container article h4 {
+  margin-bottom: 0.6rem;
+  font-size: 1rem;
+}
+.footer_socials {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.footer_socials a {
+  background: rgb(244, 243, 243);
+  padding: 0.5rem;
+  border: 1px solid transparent;
+  border-radius: 0.6rem;
+}
+.footer_socials a svg {
+  color: rgb(0, 0, 0);
+}
+.footer_socials a:hover {
+  border-color: gold;
+  background: transparent;
+}
+.footer__copyright {
+  color: rgb(196, 193, 193);
+  text-align: center;
+  padding: 1.5rem 0;
+  border-top: 2px solid pink;
+  margin-top: 5rem;
+}
+.connectwithEmail{
+  display: flex;
+  /* flex-direction: row; */
+}

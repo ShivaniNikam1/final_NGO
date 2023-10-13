@@ -1,0 +1,54 @@
+.searchbycat {
+    margin: 2rem 0 0 30px;
+    font-size: 2rem;
+    color:brown;
+    font-weight: bold;
+    text-align: center;
+}
+
+.categories {
+    margin: 1em 2em;
+    font-size: 34px;
+    height: 250px;
+    width: 25vw;
+    border-radius: 14%;
+    color: green;
+    padding: 0px 20px;
+    font-size: 26px;
+    font-weight: 700;
+    background-color: rgb(232, 232, 191);
+}
+
+.button-container {
+display: flex;
+flex-wrap: wrap; /* Allow buttons to wrap to the next line */
+justify-content: space-between; /* Distribute space between buttons */
+}
+
+/* Style for each button */
+button-c {
+flex-basis: calc(25% - 10px); /* Adjust the width of each button */
+margin-bottom: 10px; /* Add vertical spacing between rows */
+/* Add any other button styling you need */
+}
+
+/* Add additional styles as needed */
+.searchbar{
+    display: flex;
+    margin : 5rem 0 0 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.searchbar input{
+    margin-top: 20px;
+    width: 300px;
+    height: 40px;
+    font-size: 20px;
+    padding-left: 10px;
+    border: 1px solid rgb(94, 94, 94);
+}
+.searchbar p{
+    margin: 10px;
+    font-size: 18px;
+}
