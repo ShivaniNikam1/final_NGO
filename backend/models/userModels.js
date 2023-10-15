@@ -37,21 +37,5 @@ userSchema.methods.matchPassword = async function(enteredPassword) {
     return await bcrypt.compare(enteredPassword,this.password)
 }
 
-const jwt = require("jsonwebtoken")
-
-userSchema.methods.generateToken = async function ()  (res,userId) => {
-    const token = jwt.sign({userId},process.env.JWT_SECRET,{
-        expiresIn:'30d'
-    })
-
-    res.cookie('jwt',token,{
-        httpOnly:true,
-        secure:process.env.NODE_ENV !== 'development',
-    sameSite:'strict' ,
-    maxAge: 30 * 24* 60 *1000
-
-})
-}
-
 const User = mongoose.model('User', userSchema);
 module.exports = User

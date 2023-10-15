@@ -6,12 +6,12 @@ import { AiOutlineClose } from "react-icons/ai";
 import { RiAccountCircleFill } from "react-icons/ri";
 import { useState } from "react";
 
-const Navbar = ({user}) => {
+const Navbar = ({ user }) => {
   const [isNavShowing, setisNavShowing] = useState(false);
   // const [sidebarOpen, setSidebarOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [openProfile, setOpenProfile] = useState(false);
-  console.log(user)
+  console.log(user);
   const handleLogIn = () => setIsLoggedIn(true);
   const handleLogOut = () => {
     return setIsLoggedIn(false), setOpenProfile(false);
@@ -57,10 +57,10 @@ const Navbar = ({user}) => {
 
           {isLoggedIn ? (
             <>
-              <NavLink className="my-profile">
+              {/* <NavLink className="my-profile">
                 <RiAccountCircleFill />
                 <p onClick={() => setOpenProfile((prev) => !prev)}>Account</p>
-              </NavLink>
+              </NavLink> */}
             </>
           ) : (
             <>
@@ -73,6 +73,11 @@ const Navbar = ({user}) => {
               <NavLink to="/signup">
                 <button className="account">Sign up</button>
               </NavLink>
+
+              {/* <NavLink className="my-profile">
+                <RiAccountCircleFill />
+                <p onClick={() => setOpenProfile((prev) => !prev)}>Account</p>
+              </NavLink> */}
             </>
           )}
 

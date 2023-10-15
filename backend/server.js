@@ -6,6 +6,7 @@ const app = express();
 const cors = require('cors')
 
 const userRoute = require("./routes/userRoutes")
+const ngoRoute = require("./routes/ngoRoutes")
 
 
 
@@ -34,6 +35,7 @@ app.use(cors({
     credentials:true
 }))
 
+app.use("/api/ngos",ngoRoute)
 app.use("/api/users",userRoute)
 
 app.listen(5000, () => console.log("Server is running on port 5000"));

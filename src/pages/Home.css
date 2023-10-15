@@ -1,6 +1,6 @@
 .hero-container {
   position: relative;
-  background-image: url("https://www.nscag.org/news/images/281_220.jpg");
+  background-image: url("https://images6.alphacoders.com/109/thumb-1920-1096225.jpg");
   background-size: cover;
   background-position: center center;
   height: 740px;
@@ -9,18 +9,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* filter: brightness(0.7); 
-  z-index: -1;  */
+  filter: brightness(0.7); 
+  z-index: -1; 
 }
 
 
 .hero-container h3 {
-  font-size: 36px;
-  background-color: rgba(135, 135, 135, 0.7);
+  font-size: 46px;
+  /* background-color: rgba(135, 135, 135, 0.7); */
   padding: 10px;
-  font-weight: bold;
-  color: black;
+  font-weight: bolder;
+  color: rgb(255, 255, 255);
 }
+
 
 .sign-up{
   margin-top: 30px;

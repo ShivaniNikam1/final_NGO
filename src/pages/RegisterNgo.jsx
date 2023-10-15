@@ -1,3 +1,5 @@
+//register ngo code 
+
 import React from 'react';
 import styled from 'styled-components';
 import { useState,  useEffect  } from 'react';
@@ -9,6 +11,9 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
+
+import { useNavigate } from 'react-router-dom';
+
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBf-4RPinkTM2vkgskC96dlJrU_tDyMJPI&libraries=places"></script>
 
@@ -171,10 +176,10 @@ const RegisterNgo = () => {
     setOpenConfirmation(true);
   };
 
-  const handleConfirmationOk = () => {
-    // Close the confirmation dialog
-    setOpenConfirmation(false);
-  };
+  // const handleConfirmationOk = () => {
+  //   // Close the confirmation dialog
+  //   setOpenConfirmation(false);
+  // };
 
   //map
  
@@ -229,6 +234,24 @@ const RegisterNgo = () => {
       setMap(map);
     };
   
+    //ok button
+    const navigate = useNavigate()
+    const handleConfirmationOk = () => {
+     
+      // Redirect to the "NGOprofile" page
+      navigate('/Loginngo')
+      
+    };
+    
+    // const history = useHistory();
+
+    // const handleConfirmationOk = () => {
+    //   // Your logic to handle the confirmation goes here, if needed
+    
+    //   // Redirect to the "NGOprofile" page
+    //   history.push('/NgoProfile');
+    // };
+    
     return (
       <div>
         <Navbar/>
@@ -400,7 +423,7 @@ const RegisterNgo = () => {
             <DialogTitle>Confirmation</DialogTitle>
             <DialogContent>
               <DialogContentText id="alert-dialog-description">
-                NGO details submitted. Please wait for our team to update you.
+                NGO details submitted. Proceed with Login.
               </DialogContentText>
             </DialogContent>
             <DialogActions>

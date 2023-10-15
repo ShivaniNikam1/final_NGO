@@ -68,7 +68,10 @@ const Login = () => {
            // setUser(res.data.user)
            // console.log(rootuser)
   
-           Navigate("/")
+            const dataToPass = {
+              state : res.data
+            }
+           Navigate("/",{state: dataToPass})
          }else if(res.data.message === "Password incorrect")
          {
            alert("Incorrect password")

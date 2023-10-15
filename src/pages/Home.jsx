@@ -4,11 +4,15 @@ import Impact from "../components/Impact";
 import Footer from "../components/Footer";
 import Events from "../components/Events";
 import Navbar from "../components/Navbar";
+import { useLocation } from 'react-router-dom';
 
-const Home = ({user}) => {
+
+const Home = () => {
+  
   return (
     <>
-      <Navbar user={user}/>
+    
+      <Navbar/>
       <Header />
       <Events />
       <Volspeak />

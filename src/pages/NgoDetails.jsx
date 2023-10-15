@@ -5,6 +5,26 @@ import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
 import EventCalendar from '../components/EventCalendar';
 import Navbar from '../components/Navbar';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+import styled from 'styled-components';
+
+
+const Button = styled.button`
+  background-color: #36a378;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #dfd357;
+  }
+`;
 
 const NgoDetails = () => {
   const { ngoId } = useParams();
@@ -15,6 +35,21 @@ const NgoDetails = () => {
     const foundObject = Records.find(item => item.id === ngoId);
     setNgo(foundObject);
   }, [ngoId]);
+
+
+  const [openConfirmation, setOpenConfirmation] = useState(false);
+
+  const handleRegister = (e) => {
+    e.preventDefault();
+    // Show the confirmation dialog
+    setOpenConfirmation(true);
+  };
+
+
+       const handleConfirmationOk = () => {
+  //Close the confirmation dialog
+               setOpenConfirmation(false);
+   };
 
 
   return (
@@ -30,12 +65,27 @@ const NgoDetails = () => {
                 </div>
                 
                 <div className="col-md-8">
-                    <Link to={`/applyvolunteer/${ngo.id}`}>
+                    {/* <Link to={`/applyvolunteer/${ngo.id}`}> */}
+                    <Link to={`/applyvolunteer`}>
                        <button class="btn btn-warning" style={{position: 'absolute', left: '80%', top: '30%'}}>Apply as a volunteer</button>
                     </Link>
-                    <Link to={`/collab/${ngo.id}`}>
-                       <button class="btn btn-warning" style={{position: 'absolute', left: '79%', top: '37%'}}>Collaborate with our ngo</button>
-                    </Link>
+                    
+                       <button onClick={handleRegister} class="btn btn-warning" style={{position: 'absolute', left: '79%', top: '37%'}}>Collaborate with our ngo</button>
+
+                       <Dialog open={openConfirmation} onClose={handleConfirmationOk}>
+            <DialogTitle>Confirmation</DialogTitle>
+            <DialogContent>
+              <DialogContentText id="alert-dialog-description">
+                Collaboration Request recieved. We will reach you shortly. 😊
+              </DialogContentText>
+            </DialogContent>
+            <DialogActions>
+              <Button onClick={handleConfirmationOk} color="primary" autoFocus>
+                OK
+              </Button>
+            </DialogActions>
+          </Dialog>
+                    
                     <p><strong>Name of the NGO : </strong> {ngo.name} </p>
                     <p><strong>Category : </strong> {ngo.category} </p>
                     <p><strong>Open hours:</strong> {ngo.starttime} - {ngo.endtime}</p>
